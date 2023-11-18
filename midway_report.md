@@ -36,6 +36,14 @@ Yes.
 
 - **What steps of preprocessing have you undertaken so far?**
 
+- Data Cleaning/Preparation
+- Removed meaningless columns (blanl, blank2, Unnamed: 0).
+- Excluded irrelevant columns (Year, Player, Tm).
+- Converted the remaining categorical variable, Pos, into dummy variables.
+- Eliminated variables affected by game performance (G, GS, MP).
+- Dropped rows with null values for streamlined analysis.
+- Split the data into an 80-20 train-test split.
+
 - **What insights or patterns have you observed during your initial data exploration?**
 
 - Correlation matrix shows that most variables positively correlated with PER.
@@ -60,30 +68,60 @@ Random Forest, Bagged Trees, XGBoost, voting ensembles. Currently, I am explorin
 
 - **Share the link to your current GitHub repository.**
 
+https://github.com/millizoid/nba-ml-project.git
+
 - **What sections or contents have you included in your Readme.md file thus far?**
+
+Background, problem statement/question, data sources, EDA findings (I'm still adding the code), data cleaning (NOTE: THIS IS ALL IN `midway-point` branch)
 
 - **Describe the organization and documentation style of your current codebase.**
 
+Right now it is mostly organized in data sourcing, data cleaning, eda, and then building the model. The code has been commented well throughout, and I am currently working on adding more narrative and documentation into markdown to go along with this. My overall goal is to take the narrative and focus more on that and have the code supporting it.
+
 - **Have you started on the feedback and iteration process file? If so, what feedback or iterations have been documented?**
+
+Yes. Probably the biggest thing that I have documented and been working on is deciding what to actually include in the model and how that influences what the results actually mean.
 
 ## Challenges and Learnings:
 
 - **What has been the most challenging part of the project so far?**
 
+The most challenging thing for me has been deciding what to include in this model. With my dataset having 54 variables, there are a lot of things that I can consider with player efficiency. For example, a big question that I need to decide on is what my overall decision on team stats will be versus individual and how that plays into if PER is accurate.
+
 - **Have you had to pivot or adjust any aspects of your project based on unforeseen challenges or insights?**
+
+Yes. My original question was more focused on team performance and evaluating that. Individual performance was a big part of team performance evaluation, and I had to pivot from focusing on the team to individual players. One  of the most important reasons that I decided to do this was because it allowed me to more fully understand the variables that I was working with, therefore allowing me to make more educated decisions.
 
 - **What do you believe will be your next steps in the coming weeks?**
 
+Over the next few weeks, the project will embark on a two-fold exploration. First, the focus will be on refining feature engineering to create a more nuanced representation of Player Efficiency Rating (PER). This entails a comprehensive analysis of the dataset, looking beyond conventional metrics to capture the multifaceted nature of player contributions. The goal is to uncover latent patterns and relationships that can significantly enhance the predictive power of the model.
+
+Simultaneously, there will be an in-depth investigation into the selection and optimization of machine learning models. This step involves a meticulous examination of various algorithms to discern the most suitable ones for modeling the intricate dynamics of NBA player performance. The objective is to build a robust model that not only accurately predicts PER but also provides valuable insights into the underlying factors that contribute to a player's efficiency on the basketball court.
+
+The upcoming weeks will thus be dedicated to a data-driven and iterative exploration, aiming to enhance the accuracy and interpretability of the model, ultimately providing a more nuanced understanding of what defines player efficiency in the NBA.
+
 - **Are there any areas where you might need additional resources, guidance, or clarification?**
+
+As I dive into the next phases of the project, I might need some extra help and pointers in a few spots. Exploring fancy new tricks for feature engineering could get a bit tricky, so some guidance from the experts or cool resources could make that smoother. Choosing the best machine learning models might also need a bit of hand-holding, especially with complex ones, to make sure we're on the right track. Basketball stats have their own language sometimes, so some extra insight into the game's analytics or a chat with someone in the field could clear up any confusion.
 
 ## Collaboration and Feedback
 
 - **If you've sought feedback from peers, mentors, or others, what feedback have you received, and how have you incorporated it?**
 
+There have been two main pieces of feedback that I have received: 1) try to include feature engineering and 2) stay consistent in deciding what variables to include. I am incorporating this feedback by seeing if there is a way to create a model that stays consistent in what I am trying to meaure through using feature engineering techniques
+
 - **How are you ensuring effective collaboration if the project is being done in a team setting?**
+
+Something that I have found really useful in doing is not only talking about my project (because I know the data that I am using more than others), but seeing how it relates to what others are doing with their projects. Even though I am not working on the same project as others, seeing how they handle data and creatively use it has given me lots of ideas.
 
 ## Timeline and Goals
 
 - **Do you believe you're on track to complete the project by the end of the semester? If not, what are the bottlenecks or delays?**
 
+Yes. I currently feel like I am in a very good place. The rest of the semester/this project is going to be focused more on improving the methods I am using for this rather than actually building and interpreting the model.
+
 - **Outline the milestones you aim to achieve in the next few weeks.**
+
+- Investigate more into how I can feature engineer stats such as player home efficiency/player away efficiency
+- Write up and put visuals of the EDA, data sourcing, cleaning, and preprocessing that I have done and put into final report
+- Choose model to use
